@@ -52,14 +52,14 @@ body {
   input:focus,
   button:focus {
     outline: none;
-    border-color: #32CD32; /* alterado de #4d90fe para #32CD32 */
+    border-color: #00913d; /* alterado de #4d90fe para #00913d */
     box-shadow: 0 0 5px rgba(50, 205, 50, 0.5); /* alterado de rgba(77, 144, 254, 0.5) para rgba(50, 205, 50, 0.5) */
   }
   
   /* Estiliza o botão */
   button {
-    background-color: #32CD32; /* alterado de #4d90fe para #32CD32 */
-    border-color: #32CD32; /* alterado de #3079ed para #32CD32 */
+    background-color: #00913d; /* alterado de #4d90fe para #00913d */
+    border-color: #00913d; /* alterado de #3079ed para #00913d */
     color: #fff;
     cursor: pointer;
     font-weight: bold;
@@ -67,6 +67,6 @@ body {
   }
   
   button:hover {
-    background-color: #228B22; /* alterado de #357ae8 para #228B22 */
+    background-color: #00642a; /* alterado de #357ae8 para #228B22 */
   }
   
