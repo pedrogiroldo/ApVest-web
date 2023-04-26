@@ -66,7 +66,15 @@ const client_button = document
           });
         });
         
-        console.log(alunosAprovadosMask);
+        // const { jsPDF } = window.jspdf;
+        // const doc = new jsPDF({
+        //   orientation: "portrait",
+        //   unit: "pt",
+        //   format: "a4",
+        // });
+        // doc.newPage(); 
+        console.log(alunosAprovadosMask)
+        
       };
     };
   });
