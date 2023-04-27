@@ -1,11 +1,24 @@
+/*
+======================
+CONSTANTES GLOBAIS
+======================
+ */
+
+
+
 // Medidas das páginas
 const pageHeight = 842; // altura da página em pontos (A4)
-const topMargin = 30; // margem superior em pontos
+const topMargin = pxToPt(10) + pxToPt(150); // margem superior em pontos
 const bottomMargin = 30; // margem inferior em pontos
 const lineHeight = 20; // altura de linha em pontos
 
 const A4_HEIGHT_SIZE = 842;
 const A4_WIDTH_SIZE = 595;
+
+const ApVestW = pxToPt(157);
+const ApVestH = pxToPt(144);
+const uniW = pxToPt(200);
+const uniH = pxToPt(150);
 
 
 //funções para conversão de valores
@@ -34,13 +47,32 @@ function pxToPt(px) {
 
 
 // funções para adicionar pagina e logo
-function addPage (doc) {
+function addPage (doc, page) {
   doc.addPage();
-  logoUni(doc);
+  addLogo(doc, page);
 }
 
-function logoUni(doc){
-  doc.addImage('../images/logoUni.png', 'PNG', A4_WIDTH_SIZE - pxToPt(200) - cmToPt(1), A4_HEIGHT_SIZE - pxToPt(150), pxToPt(200), pxToPt(150), '', 'NONE', 0);
+function addLogo(doc, page){
+
+//verificar modelo de página (1 ou >1)
+if(page == 1){
+  const addUniLogo = ()=> {doc.addImage('../images/logoUni.png', 'PNG', A4_WIDTH_SIZE/2 - (uniW * 1.5) /2, pxToPt(20), uniW * 1.5, uniH * 1.5, '', 'NONE', 0)};
+  const addApVestLogo = () => {doc.addImage('../images/logoApVest.png', 'PNG', A4_WIDTH_SIZE - ApVestW/2 - pxToPt(15), A4_HEIGHT_SIZE - ApVestH/1.75, ApVestW/2, ApVestH/2, '', 'NONE', 0)};
+
+//chama as funções
+  addUniLogo();
+  addApVestLogo();
+}
+else{
+  const addUniLogo = ()=> {doc.addImage('../images/logoUni.png', 'PNG', A4_WIDTH_SIZE/2 - uniW/2, pxToPt(10), uniW, uniH, '', 'NONE', 0)};
+  const addApVestLogo = () => {doc.addImage('../images/logoApVest.png', 'PNG', A4_WIDTH_SIZE - ApVestW/2 - pxToPt(15), A4_HEIGHT_SIZE - ApVestH/1.75, ApVestW/2, ApVestH/2, '', 'NONE', 0)};
+
+  //chama as funções
+  addUniLogo();
+  addApVestLogo();
+}
+
+
 }
 
 // função para achar os alunos aprovados
@@ -90,6 +122,7 @@ function encontrarAlunosAprovados(alunosData, aprovadosData) {
 // Recebe os arquivos dos inputs
 const alunosFileInput = document.getElementById('lista-alunos');
 const aprovadosFileInput = document.getElementById('lista-aprovados');
+const nameVestInput = document.getElementById('nomeVest');
 
 
 // Função executada ao apertar o botão
@@ -122,10 +155,10 @@ function executar () {
 
       doc.setFont('helvetica', 'normal')
       .setFontSize(40)
-      .text('Aprovados [VESTIBULAR]', A4_WIDTH_SIZE/2, A4_HEIGHT_SIZE/2, {
+      .text('Aprovados ' + nameVestInput.value, A4_WIDTH_SIZE/2, A4_HEIGHT_SIZE/2, {
         align: 'center'
       })
-      logoUni(doc);        
+      addLogo(doc, 1);        
       addPage(doc);
       doc.setFontSize(18);
       let y = topMargin;
