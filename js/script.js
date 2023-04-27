@@ -120,7 +120,7 @@ function executar () {
         format: [A4_WIDTH_SIZE, A4_HEIGHT_SIZE],
       });
 
-      doc.setFont('times', 'normal')
+      doc.setFont('helvetica', 'normal')
       .setFontSize(40)
       .text('Aprovados [VESTIBULAR]', A4_WIDTH_SIZE/2, A4_HEIGHT_SIZE/2, {
         align: 'center'
