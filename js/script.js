@@ -10,7 +10,7 @@ CONSTANTES GLOBAIS
 const pageHeight = 842; // altura da página em pontos (A4)
 const topMargin = pxToPt(10) + pxToPt(150); // margem superior em pontos
 const bottomMargin = 30; // margem inferior em pontos
-const lineHeight = 20; // altura de linha em pontos
+const lineHeight = 25; // altura de linha em pontos
 
 const A4_HEIGHT_SIZE = 842;
 const A4_WIDTH_SIZE = 595;
