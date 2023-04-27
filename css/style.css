@@ -127,4 +127,7 @@ body {
   .button:hover{
     background-color: #00642a;
   }
+  .input{
+    display: inline-block;
+  }
   

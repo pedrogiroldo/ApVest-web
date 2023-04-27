@@ -6,20 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/greenTick.css">
     <title>ApVest</title>
 </head>
 <body>
     <img src="./images/logoUni.png" alt="Logo" class="logoUni" />
     <form>      
         <img src="./images/logoApVest.png" alt="Logo" class="logoApVest" />
+
         <h1>Bem-vindo(a) ao ApVest</h1>
+
+        <div class="input1">
         <h2 class="lista-de-alunos">Lista de alunos:</h2>
         <label for="lista-alunos" class="button">Escolher arquivo</label>
-        <input id="lista-alunos" class="input" type="file" accept=".txt">        
+        <div class="input1Tick">
+            <input id="lista-alunos" class="input" type="file" accept=".txt">
+            <img src="./images/greenTick.png" class="greenTickInput1" id="greenTickInput1" />   
+        </div>
+        </div>
+
+        <div class="input2">
             <h2>Lista de aprovados:</h2>
-        <label for="lista-aprovados" class="button">Escolher arquivo</label>
-        <input id='lista-aprovados' class='input' type="file" accept=".txt">
+            <label for="lista-aprovados" class="button">Escolher arquivo</label>
+            <div class="input2Tick">
+                <input id='lista-aprovados' class='input' type="file" accept=".txt">
+                <img src="./images/greenTick.png" class="greenTickInput2" id="greenTickInput2" />     
+            </div>
+        </div>  
+
         <hr>
+
         <button id="input_client_button">Verificar</button>
         </form>
         
