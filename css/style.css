@@ -20,12 +20,12 @@ body {
   }
 
   .logoApVest {
-    position: absolute;
-    top: 10px;
-    left: 250px;
+    display: block; /* torna o elemento um bloco */
+    margin: 0 auto; /* define margem superior e inferior como 0 e margem esquerda e direita como automático */
     width: 100px;
     height: auto;
   }
+  
   
   /* Estiliza o formulário */
   form {
@@ -116,6 +116,7 @@ body {
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
   .input[type="file"] {
