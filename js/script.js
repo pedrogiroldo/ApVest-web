@@ -1,3 +1,12 @@
+const pageHeight = 842; // altura da página em pontos (A4)
+const topMargin = 30; // margem superior em pontos
+const bottomMargin = 30; // margem inferior em pontos
+const lineHeight = 20; // altura de linha em pontos
+
+const A4_HEIGHT_SIZE = 842;
+const A4_WIDTH_SIZE = 595;
+
+
 function encontrarAlunosAprovados(alunosData, aprovadosData) {
 
   //regex para tirar os \r
@@ -60,19 +69,30 @@ const client_button = document
       reader2.onload = () => {
         const aprovadosData = reader2.result;
         let alunosAprovados = encontrarAlunosAprovados(alunosData, aprovadosData);
+
         const alunosAprovadosMask = alunosAprovados.map((aluno) => {
           return aluno.toLowerCase().replace(/(^|\s)\S/g, function (letra) {
             return letra.toUpperCase();
           });
         });
         
-        // const { jsPDF } = window.jspdf;
-        // const doc = new jsPDF({
-        //   orientation: "portrait",
-        //   unit: "pt",
-        //   format: "a4",
-        // });
-        // doc.newPage(); 
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF({
+          orientation: "portrait",
+          unit: "pt",
+          format: [A4_WIDTH_SIZE, A4_HEIGHT_SIZE],
+        });
+        let y = topMargin;
+        for (let i = 0; i < alunosAprovadosMask.length; i++) {
+          if (y + lineHeight > pageHeight - bottomMargin) {
+            doc.addPage();
+            y = topMargin;
+          }
+          doc.text(alunosAprovadosMask[i], 20, y);
+           y += lineHeight;
+        }
+
+        doc.save("teste.pdf")
         console.log(alunosAprovadosMask)
         
       };
