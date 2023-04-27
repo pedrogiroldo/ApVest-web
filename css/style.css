@@ -78,32 +78,6 @@ body {
     background-color: #00642a; /* alterado de #357ae8 para #228B22 */
   }
   
-  /* #lista-alunos,
-#lista-aprovados {
-  appearance: none;
-  background-color: #4d90fe;
-  border-color: #3079ed;
-  color: #fff;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
-  padding: 12px 20px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  font-size: 16px;
-  letter-spacing: 1px;
-  border: none;
-}
-
-#lista-alunos:hover,
-#lista-aprovados:hover {
-  background-color: #357ae8;
-}
-#lista-alunos::-webkit-file-upload-button,
-#lista-aprovados::-webkit-file-upload-button {
-  visibility: hidden;
-} */
 
 .button {
     background-color: #00913d;
