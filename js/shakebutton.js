@@ -9,12 +9,15 @@ button.addEventListener('click', () => {
     // adiciona a classe 'shake' aos inputs vazios
     if (!universityInput.value) {
       universityInput.classList.add('shake');
+      //alert('Por favor, preencha o campo "Nome da Universidade".');
     }
     if (!alunosInput.value) {
       alunosInput.classList.add('shake');
+      //alert('Por favor, preencha o campo "Lista de Alunos".');
     }
     if (!aprovadosInput.value) {
       aprovadosInput.classList.add('shake');
+      //alert('Por favor, preencha o campo "Lista de Aprovados".');
     }
 
     // remove a classe 'shake' após 500ms

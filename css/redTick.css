@@ -1,0 +1,29 @@
+.redTickInput1{
+    width: 50px;
+    height: auto;
+    /* position: absolute; */
+    /* margin-left: 10px;
+    margin-top: -5px; */
+    /* display: none; */
+}
+
+.redTickInput2{
+    width: 50px;
+    height: auto;
+    /* position: absolute; */
+    /* margin-left: 20px;
+    margin-top: -5px; */
+    /* display: none; */
+}
+
+.input1Tick{
+    /* display: flex; */
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.input2Tick{
+    /* display: flex; */
+  vertical-align: middle;
+  display: inline-block;
+}
