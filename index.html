@@ -7,22 +7,44 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/greenTick.css">
+    <link rel="stylesheet" href="./css/helpButton.css">
     <title>ApVest</title>
 </head>
 <body>
+    
+    <div id="popup" class="popup">
+        <!-- <div class="popup-content"> -->
+            <span class="close">&times;</span>
+            <h1>Como utilizar o ApVest</h1>
+            <hr>
+            <h2>Arquivo:</h2>
+            <p>O ApVest recebe um arquivo ".txt" que contém os dados para a comparação.</p>
+            <h2>Formatação:</h2>
+            <p>Os nomes devem estar separados por  linhas, um nome em cada linha dos arquivos ".txt"<br><br><b>Os arquivos devem estar no seguinte formato:</b><br><br>Nome1<br>Nome2<br>Nome3<br>Nome4<br>Nome5</p>
+            <p><b>Letras maiúsculas e acentuação:</b><br><br><u>O ApVest consegue reconhecer nomes mesmo que haja as seguintes distinções nos ".txt":</u></p>
+            <br>
+            <p><b>Letras maísuculas:</b><br>João ↔ joão</p>
+            <p><b>Acentuação:</b><br>joão ↔ Joao</p>
+        <!-- </div> -->
+    </div>
+    
     <img src="./images/logoUni.png" alt="Logo" class="logoUni" />
+    
     <form>      
+        <div class="firstLine" style="display: flex; align-items: center;">
+        <img src="./images/interrogacaoIcon.png" class="intIcon" id="interrogacaoIcon"/>
         <img src="./images/logoApVest.png" alt="Logo" class="logoApVest" />
-
+        </div>
+        
         <h1>Bem-vindo(a) ao ApVest!</h1>
-
+        
         <div class="inputVest">
-            <h2 class="nomeVest">Nome da universidade:</h2>
-            <input class="input" type="text" id="nomeVest"/>
+            <h3 class="nomeVest">Nome da universidade:</h3>
+            <input class="input" type="text" id="nomeVest" placeholder="Insira o nome da universidade (ou abreviação)"/>
         </div>
 
         <div class="input1">
-        <h2 class="lista-de-alunos">Lista de alunos:</h2>
+        <h3 class="lista-de-alunos">Lista de alunos:</h3>
         <label for="lista-alunos" class="button">Escolher arquivo</label>
         <div class="input1Tick">
             <input id="lista-alunos" class="input" type="file" accept=".txt">
@@ -31,11 +53,11 @@
         </div>
 
         <div class="input2">
-            <h2>Lista de aprovados:</h2>
+            <h3>Lista de aprovados:</h3>
             <label for="lista-aprovados" class="button">Escolher arquivo</label>
             <div class="input2Tick">
                 <input id='lista-aprovados' class='input' type="file" accept=".txt">
-                <img src="./images/greenTick.png" class="greenTickInput2" id="greenTickInput2" />     
+                <img src="./images/greenTick.png" class="greenTickInput2" id="greenTickInput2" /> 
             </div>
         </div>  
 
@@ -46,5 +68,6 @@
         
         <script src="./js/script.js"></script>
         <script src="./js/displayName.js"></script>
+        <script src="./js/helpButton.js"></script>
     </body>
 </html>

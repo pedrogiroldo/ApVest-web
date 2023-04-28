@@ -139,6 +139,7 @@ body {
   .intIcon{
     position: relative;
     width: 30px;
+    margin-top: -13%;
     left: 94%;
     /* top: 20px; */
 
