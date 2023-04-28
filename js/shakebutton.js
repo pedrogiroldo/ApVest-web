@@ -2,13 +2,17 @@ const button = document.getElementById('input_client_button');
 
 button.addEventListener('click', () => {
   const universityInput = document.getElementById('nomeVest');
-  const alunosInput = document.getElementById('lista-alunos');
-  const aprovadosInput = document.getElementById('lista-aprovados');
+  // const universityInputCSS = document.querySelector('inputVest');
+  // const alunosInput = document.getElementById('lista-alunos');
+  const alunosInput = document.querySelector('.input1');
+  // const aprovadosInput = document.getElementById('lista-aprovados');
+  const aprovadosInput = document.querySelector('.input2');
 
   if (!universityInput.value || !alunosInput.value || !aprovadosInput.value) {
     // adiciona a classe 'shake' aos inputs vazios
     if (!universityInput.value) {
       universityInput.classList.add('shake');
+      // universityInput.classList.add.boxShadow(0, 0, 5, rgba(225, 0, 0))
       //alert('Por favor, preencha o campo "Nome da Universidade".');
     }
     if (!alunosInput.value) {
