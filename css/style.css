@@ -21,6 +21,7 @@ body {
     left: 10px;
     width: 220px;
     height: auto;
+    z-index: -2;
   }
 
   .logoApVest {
@@ -39,6 +40,9 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 500px;
+    box-shadow: 0 0 10px rgba(12, 92, 12, 0.5);
+    border-color: #00913d;
+    z-index: 0;
   }
   
   /* Estiliza as labels */
@@ -66,6 +70,7 @@ body {
     outline: none;
     border-color: #00913d; /* alterado de #4d90fe para #00913d */
     box-shadow: 0 0 5px rgba(50, 205, 50, 0.5); /* alterado de rgba(77, 144, 254, 0.5) para rgba(50, 205, 50, 0.5) */
+    transition: 0.4s ease;
   }
   
   /* Estiliza o botão */
@@ -131,3 +136,14 @@ body {
     display: inline-block;
   }
   
+  .intIcon{
+    position: relative;
+    width: 30px;
+    left: 94%;
+    /* top: 20px; */
+
+  }
+
+  .intIcon:hover{
+    filter: brightness(70%);
+  }
