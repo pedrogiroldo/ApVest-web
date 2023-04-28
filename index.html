@@ -32,8 +32,8 @@
     
     <form>      
         <div class="firstLine" style="display: flex; align-items: center;">
-        <img src="./images/interrogacaoIcon.png" class="intIcon" id="interrogacaoIcon"/>
-        <img src="./images/logoApVest.png" alt="Logo" class="logoApVest" />
+            <img title="interrogacaoIcon" src="./images/interrogacaoIcon.png" class="intIcon" id="interrogacaoIcon"/>
+            <img src="./images/logoApVest.png" alt="Logo" class="logoApVest" />
         </div>
         
         <h1>Bem-vindo(a) ao ApVest!</h1>
@@ -49,7 +49,7 @@
         <label for="lista-alunos" class="button">Escolher arquivo</label>
         <div class="input1Tick">
             <input id="lista-alunos" class="input" type="file" accept=".txt">
-            <img src="./images/greenTick.png" class="greenTickInput1" id="greenTickInput1" />   
+            <img title="greenTick2" src="./images/greenTick.png" class="greenTickInput1" id="greenTickInput1" />   
         </div>
         </div>
 
@@ -58,17 +58,18 @@
             <label for="lista-aprovados" class="button">Escolher arquivo</label>
             <div class="input2Tick">
                 <input id='lista-aprovados' class='input' type="file" accept=".txt">
-                <img src="./images/greenTick.png" class="greenTickInput2" id="greenTickInput2" /> 
+                <img title="greenTick" src="./images/greenTick.png" class="greenTickInput2" id="greenTickInput2" /> 
             </div>
         </div>  
 
         <hr>
 
-        <button id="input_client_button">Verificar</button>
+        <button type="button" id="input_client_button">Verificar</button>
         </form>
         
         <script src="./js/script.js"></script>
         <script src="./js/displayName.js"></script>
         <script src="./js/helpButton.js"></script>
+        <script src="./js/shakebutton.js"></script>
     </body>
 </html>
