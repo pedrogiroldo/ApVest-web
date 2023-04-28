@@ -20,6 +20,11 @@ const ApVestH = pxToPt(144);
 const uniW = pxToPt(200);
 const uniH = pxToPt(150);
 
+/*
+=======================
+FUNCOES
+=====================
+*/
 
 //funções para conversão de valores
 function cmToPx(valorEmCm) {
@@ -177,9 +182,11 @@ function executar () {
     };
   };
 }
-
- 
-// Coisas executadas ao apertar o botão
+/*
+===============
+BOTAO VERIFICAR
+===============
+*/
 const client_button = document
   .getElementById('input_client_button')
   .addEventListener('click', (e) => {
