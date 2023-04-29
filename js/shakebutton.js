@@ -1,7 +1,9 @@
 const button = document.getElementById('input_client_button');
 
-const listaAlunosRedTick = document.getElementById('redTickInput1')
-const listaAprovadosRedTick = document.getElementById('redTickInput2')
+const listaAlunosRedTick = document.getElementById('redTickInput1');
+const listaAprovadosRedTick = document.getElementById('redTickInput2');
+
+const buttonCSS= document.querySelector('.button');
 
 listaAprovadosRedTick.style.display = "none";
 listaAlunosRedTick.style.display = "none";
@@ -26,11 +28,15 @@ button.addEventListener('click', () => {
     if (!alunosInput.value) {
       alunosInput.classList.add('shake');
       listaAlunosRedTick.style.display = '';
+      buttonCSS.style.borderColor = 'red';
+      buttonCSS.style.boxShadow = '0 0 5px red';
       //alert('Por favor, preencha o campo "Lista de Alunos".');
     }
     if (!aprovadosInput.value) {
       aprovadosInput.classList.add('shake');
       listaAprovadosRedTick.style.display = '';
+      buttonCSS.style.boxShadow = '0 0 5px red';
+      buttonCSS.style.borderColor = 'red';
       //alert('Por favor, preencha o campo "Lista de Aprovados".');
     }
 

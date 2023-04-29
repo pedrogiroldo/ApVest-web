@@ -25,5 +25,6 @@ listaAlunosTick.style.display = "none";
   
   listaAprovadosInput.addEventListener('change', function() {
     listaAprovadosLabel.innerHTML = this.files[0].name;
-    listaAprovadosTick.style.display = 'none';
+    listaAprovadosTick.style.display = '';
+    listaAprovadosRedTick.style.display = 'none';
   });
