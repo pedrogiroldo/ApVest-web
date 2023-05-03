@@ -1,3 +1,0 @@
-=> O 'shake' e os elementos vermelhos não estão funcionando corretamente.
-
-=> 
