@@ -166,7 +166,7 @@ function executar () {
         maxWidth: A4_WIDTH_SIZE - 2 * cmToPt(2)
       })
       .setFontSize(15)
-      .text('Essa é uma ferramenta em desenvolvimento, seu nome não estar aqui NÃO significa que você não foi aprovado. Confira a lista de aprovados oficial.', A4_WIDTH_SIZE/2, A4_HEIGHT_SIZE - cmToPt(4), 
+      .text('Essa ferramenta está em desenvolvimento, seu nome não estar aqui NÃO significa que você não foi aprovado. Confira a lista de aprovados oficial.', A4_WIDTH_SIZE/2, A4_HEIGHT_SIZE - cmToPt(4), 
       {
         maxWidth: A4_WIDTH_SIZE - 2 * cmToPt(2),
         align: 'center'
