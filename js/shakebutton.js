@@ -24,13 +24,12 @@ button.addEventListener('click', () => {
       // universityInput.classList.add.boxShadow(0, 0, 5, rgba(225, 0, 0))
       //alert('Por favor, preencha o campo "Nome da Universidade".');
     }
-    console.log(alunosInput)
     if (!alunosInput.value) {
       alunosInputCSS.classList.add('shake');
       listaAlunosRedTick.style.display = '';
       //alert('Por favor, preencha o campo "Lista de Alunos".');
     }
-    console.log(aprovadosInput)
+
     if (!aprovadosInput.value) {
       aprovadosInputCSS.classList.add('shake');
       listaAprovadosRedTick.style.display = '';

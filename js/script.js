@@ -198,5 +198,7 @@ const client_button = document
   .getElementById('input_client_button')
   .addEventListener('click', (e) => {
     e.preventDefault();
+    if (alunosFileInput.files.length > 0 && aprovadosFileInput.files.length > 0){
     executar();
+    }
   })
