@@ -27,14 +27,6 @@ FUNCOES
 */
 
 //funções para conversão de valores
-function cmToPx(valorEmCm) {
-  const larguraDoMonitorEmCm = 34; // exemplo de largura do monitor em centímetros
-  const larguraDoMonitorEmPixels = window.screen.width; // largura do monitor em pixels
-  const proporcao = larguraDoMonitorEmPixels / larguraDoMonitorEmCm; // proporção entre largura em pixels e largura em centímetros
-  const valorEmPx = valorEmCm * proporcao; // converte para pixels
-  return valorEmPx;
-}
-
 function ptToPx(pt) {
   const px = pt * (96 / 72);
   return px;
@@ -191,7 +183,7 @@ function executar () {
 }
 /*
 ===============
-BOTAO VERIFICAR
+BOTÃO VERIFICAR
 ===============
 */
 const client_button = document
