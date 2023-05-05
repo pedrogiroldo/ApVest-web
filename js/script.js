@@ -51,25 +51,23 @@ function addPage (doc, page) {
 
 function addLogo(doc, page){
 
-//verificar modelo de página (1 ou >1)
-if(page == 1){
-  const addUniLogo = ()=> {doc.addImage('../images/logoUni.png', 'PNG', A4_WIDTH_SIZE/2 - (uniW * 1.5) /2, pxToPt(20), uniW * 1.5, uniH * 1.5, '', 'NONE', 0)};
-  const addApVestLogo = () => {doc.addImage('../images/logoApVest.png', 'PNG', A4_WIDTH_SIZE - ApVestW/2 - pxToPt(15), A4_HEIGHT_SIZE - ApVestH/1.75, ApVestW/2, ApVestH/2, '', 'NONE', 0)};
-
-//chama as funções
-  addUniLogo();
-  addApVestLogo();
-}
-else{
-  const addUniLogo = ()=> {doc.addImage('../images/logoUni.png', 'PNG', A4_WIDTH_SIZE/2 - uniW/2, pxToPt(10), uniW, uniH, '', 'NONE', 0)};
-  const addApVestLogo = () => {doc.addImage('../images/logoApVest.png', 'PNG', A4_WIDTH_SIZE - ApVestW/2 - pxToPt(15), A4_HEIGHT_SIZE - ApVestH/1.75, ApVestW/2, ApVestH/2, '', 'NONE', 0)};
+  //verificar modelo de página (1 ou >1)
+  if(page == 'firstPage'){
+    const addUniLogo = ()=> {doc.addImage('../images/logoUni.png', 'PNG', A4_WIDTH_SIZE / 2 - (uniW * 1.5) / 2 - (ApVestW/1.5), pxToPt(20), uniW * 1.5, uniH * 1.5, '', 'NONE', 0)};
+    const addApVestLogo = () => {doc.addImage('../images/logoApVest.png', 'PNG', A4_WIDTH_SIZE / 2 + (uniW * 1.5) / 2 - (ApVestW/1.5) + cmToPt(1.8), pxToPt(80), ApVestW / 1.5, ApVestH / 1.5, '', 'NONE', 0)};
 
   //chama as funções
-  addUniLogo();
-  addApVestLogo();
-}
+    addUniLogo();
+    addApVestLogo();
+  }
+  else{
+    const addUniLogo = ()=> {doc.addImage('../images/logoUni.png', 'PNG', A4_WIDTH_SIZE/2 - uniW/2, pxToPt(10), uniW, uniH, '', 'NONE', 0)};
+    const addApVestLogo = () => {doc.addImage('../images/logoApVest.png', 'PNG', A4_WIDTH_SIZE - ApVestW/2 - pxToPt(15), A4_HEIGHT_SIZE - ApVestH/1.75, ApVestW/2, ApVestH/2, '', 'NONE', 0)};
 
-
+    //chama as funções
+    addUniLogo();
+    addApVestLogo();
+  }
 }
 
 // função para achar os alunos aprovados
@@ -163,7 +161,7 @@ function executar () {
         maxWidth: A4_WIDTH_SIZE - 2 * cmToPt(2),
         align: 'center'
       });
-      addLogo(doc, 1);        
+      addLogo(doc, "firstPage");        
       addPage(doc);
       doc.setFontSize(18);
       let y = topMargin;
