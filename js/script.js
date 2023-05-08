@@ -6,6 +6,7 @@ CONSTANTES GLOBAIS
 
 
 
+
 // Medidas das páginas
 const pageHeight = 842; // altura da página em pontos (A4)
 const topMargin = pxToPt(10) + pxToPt(150); // margem superior em pontos
