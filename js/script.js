@@ -21,6 +21,12 @@ const ApVestH = pxToPt(144);
 const uniW = pxToPt(200);
 const uniH = pxToPt(150);
 
+// Imagens
+const logoUni = new Image()
+logoUni.src = '../images/logoUni.png'
+const logoApVest = new Image()
+logoApVest.src = '../images/logoApVest.png'
+
 /*
 =======================
 FUNCOES
@@ -54,8 +60,8 @@ function addLogo(doc, page){
 
   //verificar modelo de página (1 ou >1)
   if(page == 'firstPage'){
-    const addUniLogo = ()=> {doc.addImage('../images/logoUni.png', 'PNG', A4_WIDTH_SIZE / 2 - (uniW * 1.5) / 2 - (ApVestW/1.5), pxToPt(20), uniW * 1.5, uniH * 1.5, '', 'NONE', 0)};
-    const addApVestLogo = () => {doc.addImage('../images/logoApVest.png', 'PNG', A4_WIDTH_SIZE / 2 + (uniW * 1.5) / 2 - (ApVestW/1.5) + cmToPt(1.8), pxToPt(80), ApVestW / 1.5, ApVestH / 1.5, '', 'NONE', 0)};
+    const addUniLogo = ()=> {doc.addImage(logoUni, 'PNG', A4_WIDTH_SIZE / 2 - (uniW * 1.5) / 2 - (ApVestW/1.5), pxToPt(20), uniW * 1.5, uniH * 1.5, '', 'NONE', 0)};
+    const addApVestLogo = () => {doc.addImage(logoApVest, 'PNG', A4_WIDTH_SIZE / 2 + (uniW * 1.5) / 2 - (ApVestW/1.5) + cmToPt(1.8), pxToPt(80), ApVestW / 1.5, ApVestH / 1.5, '', 'NONE', 0)};
 
   //chama as funções
     addUniLogo();
