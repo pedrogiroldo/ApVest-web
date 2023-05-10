@@ -54,7 +54,8 @@ body {
   
   /* Estiliza os inputs e botão */
   input,
-  button {
+  button,
+  select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -63,10 +64,15 @@ body {
     width: 100%;
     margin-bottom: 12px;
   }
+
+  #nomeVest {
+    width: 34%;
+  }
   
   /* Estiliza o input e botão quando em foco */
   input:focus,
-  button:focus {
+  button:focus,
+  select:focus {
     outline: none;
     border-color: #00913d; /* alterado de #4d90fe para #00913d */
     box-shadow: 0 0 5px rgba(50, 205, 50, 0.5); /* alterado de rgba(77, 144, 254, 0.5) para rgba(50, 205, 50, 0.5) */
