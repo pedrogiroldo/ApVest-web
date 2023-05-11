@@ -23,7 +23,7 @@ const uniH = pxToPt(150);
 
 // Imagens
 const logoUni = new Image()
-logoUni.src = '../images/logoUni.png'
+logoUni.src = '../images/exemploLogo.png'
 const logoApVest = new Image()
 logoApVest.src = '../images/logoApVest.png'
 
@@ -68,7 +68,7 @@ function addLogo(doc, page){
     addApVestLogo();
   }
   else{
-    const addUniLogo = ()=> {doc.addImage('../images/logoUni.png', 'PNG', A4_WIDTH_SIZE/2 - uniW/2, pxToPt(10), uniW, uniH, '', 'NONE', 0)};
+    const addUniLogo = ()=> {doc.addImage('../images/exemploLogo.png', 'PNG', A4_WIDTH_SIZE/2 - uniW/2, pxToPt(10), uniW, uniH, '', 'NONE', 0)};
     const addApVestLogo = () => {doc.addImage('../images/logoApVest.png', 'PNG', A4_WIDTH_SIZE - ApVestW/2 - pxToPt(15), A4_HEIGHT_SIZE - ApVestH/1.75, ApVestW/2, ApVestH/2, '', 'NONE', 0)};
 
     //chama as funções
