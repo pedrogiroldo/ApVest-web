@@ -175,7 +175,7 @@ function executar () {
          y += lineHeight;
       }
 
-      doc.save("Aprovados"+ " " + nameVestInput.value + " " + "Universitário.pdf")
+      doc.save("Aprovados"+ " " + nameVestInput.value + " " + ".pdf")
       
     };
   };
