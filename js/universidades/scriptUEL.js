@@ -1,4 +1,4 @@
-function verificarUEL (alunosData, aprovadosData) {
+export function verificarUEL (alunosData, aprovadosData) {
 
   //regex para tirar os \r
   const alunosSemFormatacao = alunosData.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
@@ -9,9 +9,9 @@ function verificarUEL (alunosData, aprovadosData) {
 
   // Remover acentos e colocar em maiúsculo com primeira letra de cada palavra em maiúsculo
   alunosSemFormatacao.forEach((aluno) => {
-    const primeiras3Linhas = "^(.*\n){0,2}.*$"
+    const numeros = "\d+"
 
-    aluno = aluno.replace(primeiras3Linhas, "")
+    aluno = aluno.replace(numeros, "") 
     aluno = aluno.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     aluno = aluno.toUpperCase();
     aluno = aluno.replace(/(\b\w)/gi, function(m) {
@@ -43,6 +43,3 @@ function verificarUEL (alunosData, aprovadosData) {
 
   return alunosAprovados;
 }
-
-
-export default (verificarUEL)
