@@ -33,7 +33,7 @@
     
     <img src="./images/exemploLogo.png" alt="Logo" class="logoUni" />
     
-    <form>      
+    <form method="post" action="" enctype="multipart/form-data">      
         <div class="firstLine" style="display: flex; align-items: center;">
             <img title="interrogacaoIcon" src="./images/interrogacaoIcon.png" class="intIcon" id="interrogacaoIcon"/>
             <img src="./images/logoApVest.png" alt="Logo" class="logoApVest" />
@@ -55,21 +55,21 @@
         <div class="input1">
             <label for="lista-alunos" class="button">Escolher arquivo</label>
             <div class="input1Tick">
-              <input id="lista-alunos" class="input" type="file" accept=".txt">
+              <input id="lista-alunos" class="input" type="file" accept="text/plain">
               <img title="greenTick2" src="./images/greenTick.png" class="greenTickInput1" id="greenTickInput1" />   
               <img title="redTick1" src="./images/redTick.png" class="redTickInput1" id="redTickInput1" />   
             </div>
         </div>
 
-        <h3>Lista de aprovados:</h3>
+        <h3>Lista de aprovados:</h3> 
         <div class="input2">
             <label for="lista-aprovados" class="button">Escolher arquivo</label>
             <div class="input2Tick">
-                <input id='lista-aprovados' class='input' type="file" accept=".txt">
+                <input id='lista-aprovados' class='input' type="file" accept="text/plain">
                 <img title="redTick1" src="./images/greenTick.png" class="greenTickInput2" id="greenTickInput2" /> 
                 <img title="redTick2" src="./images/redTick.png" class="redTickInput2" id="redTickInput2" /> 
             </div>
-        </div>  
+        </div> 
 
         <hr>
 
@@ -77,6 +77,7 @@
         </form>
         
         <script src="./js/script.js" type="module"></script>
+        <script src="./validarTipoArquivo.js"></script>
         <script src="./js/displayName.js"></script>
         <script src="./js/helpButton.js"></script>
         <script src="./js/shakebutton.js"></script>
