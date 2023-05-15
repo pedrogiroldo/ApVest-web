@@ -90,9 +90,13 @@ function addLogo(doc, page){
 // função para achar os alunos aprovados
 function encontrarAlunosAprovados(alunosData, aprovadosData) {
   // atualizar valor do nameVestInput
-  nameVestInput = document.getElementById('nomeVest');
-  if (nameVestInput === "UEL") {
-    verificarUEL(alunosData, aprovadosData)
+  const nameVestInput = document.getElementById('nomeVest');
+  const selectedVest = nameVestInput.value
+  switch(selectedVest) {
+    case 'UEL':
+      const alunosAprovadosUEL = verificarUEL(alunosData, aprovadosData);
+      console.log(selectedVest);
+      return alunosAprovadosUEL;
   }
 }
 
@@ -111,7 +115,7 @@ function executar () {
     reader2.readAsText(aprovadosFile);
     reader2.onload = () => {
       const aprovadosData = reader2.result;
-      let alunosAprovados = encontrarAlunosAprovados(alunosData, aprovadosData);
+      const alunosAprovados = encontrarAlunosAprovados(alunosData, aprovadosData);
 
       const alunosAprovadosMask = alunosAprovados.map((aluno) => {
         return aluno.toLowerCase().replace(/(^|\s)\S/g, function (letra) {

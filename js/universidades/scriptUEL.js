@@ -4,12 +4,15 @@ export function verificarUEL (alunosData, aprovadosData) {
   const alunosSemFormatacao = alunosData.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
   const aprovadosSemFormatacao = aprovadosData.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
 
+  console.log(alunosSemFormatacao)
+  console.log(aprovadosSemFormatacao)
+
   let alunos = [];
   let aprovados = [];
 
   // Remover acentos e colocar em maiúsculo com primeira letra de cada palavra em maiúsculo
   alunosSemFormatacao.forEach((aluno) => {
-    const numeros = "\d+"
+    const numeros = "\\d+"
 
     aluno = aluno.replace(numeros, "") 
     aluno = aluno.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -22,12 +25,15 @@ export function verificarUEL (alunosData, aprovadosData) {
 
   // Remover acentos e colocar em maiúsculo com primeira letra de cada palavra em maiúsculo
   aprovadosSemFormatacao.forEach((aprovado) => {
-    aprovado = aprovado.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    aprovado = aprovado.toUpperCase();
-    aprovado = aprovado.replace(/(\b\w)/gi, function(m) {
-      return m.toUpperCase();
-    });
-    aprovados.push(aprovado);
+    aprovado = aprovado.trim();
+    if (aprovado !== "") {
+      aprovado = aprovado.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      aprovado = aprovado.toUpperCase();
+      aprovado = aprovado.replace(/(\b\w)/gi, function (m) {
+        return m.toUpperCase();
+      });
+      aprovados.push(aprovado);
+    }
   });
 
   const alunosSet = new Set(alunos);
