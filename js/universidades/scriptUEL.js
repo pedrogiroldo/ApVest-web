@@ -6,9 +6,6 @@ export function verificarUEL (alunosData, aprovadosData) {
   const alunosSemFormatacao = alunosData.replace(/\r\n/g, '\n').replace(/\r/g, '\n').replace(numeros, "") .split('\n');
   const aprovadosSemFormatacao = aprovadosData.replace(/\r\n/g, '\n').replace(/\r/g, '\n').replace(numeros, "") .split('\n');
 
-  console.log(alunosSemFormatacao)
-  console.log(aprovadosSemFormatacao)
-
   let alunos = [];
   let aprovados = [];
 
