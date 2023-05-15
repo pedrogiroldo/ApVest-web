@@ -102,13 +102,7 @@ function encontrarAlunosAprovados(alunosData, aprovadosData) {
 function executar () {
   const alunosFile = alunosFileInput.files[0];
   const aprovadosFile = aprovadosFileInput.files[0];
-  const fileBuffer = fs.readFileSync(aprovadosFile);
-  if (fileBuffer[0] === 0xEF && fileBuffer[1] === 0xBB && fileBuffer[2] === 0xBF) {
-      console.log(`O arquivo ${filePath} é um arquivo de texto.`);
-    } else {
-      console.error(`O arquivo ${filePath} não é um arquivo de texto.`);
-      return;
-    }
+
   const reader = new FileReader();
   reader.readAsText(alunosFile);
   reader.onload = () => {
