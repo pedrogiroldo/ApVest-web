@@ -95,7 +95,6 @@ function encontrarAlunosAprovados(alunosData, aprovadosData) {
   switch(selectedVest) {
     case 'UEL':
       const alunosAprovadosUEL = verificarUEL(alunosData, aprovadosData);
-      console.log(selectedVest);
       return alunosAprovadosUEL;
   }
 }
@@ -156,7 +155,7 @@ function executar () {
          y += lineHeight;
       }
 
-      doc.save("Aprovados"+ " " + nameVestInput.value + " " + "Universitário.pdf")
+      doc.save("Aprovados"+ " " + nameVestInput.value + " " + ".pdf")
       
     };
   };
