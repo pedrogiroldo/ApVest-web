@@ -3,15 +3,6 @@ const popup = document.getElementById("popup");
 const close = document.getElementsByClassName("close")[0];
 
 interrogacaoIcon.addEventListener("click", function() {
-  popup.style.display = "block";
-});
-
-close.addEventListener("click", function() {
-  popup.style.display = "none";
-});
-
-window.addEventListener("click", function(event) {
-  if (event.target == popup) {
-    popup.style.display = "none";
-  }
+  const doc = "https://github.com/pedrogiroldo/ApVest-web/wiki/Documenta%C3%A7%C3%A3o-v1.5.0"
+  window.open(doc, "_blank")
 });
