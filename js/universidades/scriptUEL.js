@@ -5,8 +5,8 @@ export function verificarUEL (alunosData, aprovadosData) {
   const caracteresEspeciais = /[-!@#$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g;
   
   //regex para tirar os \r e outros problemas (como números ou espaços repetidos)
-  const alunosSemFormatacao = alunosData.
-  replace(/\r\n/g, '\n')  //substitui \r por \n (causa erros em algumas listas)
+  const alunosSemFormatacao = alunosData
+  .replace(/\r\n/g, '\n')  //substitui \r por \n (causa erros em algumas listas)
   .replace(/\r/g, '\n') //substitui \r por \n (causa erros em algumas listas)
   .replace(numeros, "") // retira números
   .replace(espacosRepetidos, ' ') // transforma os espaços repetidos em um só
