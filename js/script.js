@@ -40,6 +40,7 @@ FUNCOES
 
 // IMPORTAR FUNCOES UNIVERSIDADES
 import {verificarUEL} from './universidades/scriptUEL.js'
+import {verificarUEM} from './universidades/scriptUEM.js'
 
 
 //funções para conversão de valores
@@ -94,9 +95,12 @@ function encontrarAlunosAprovados(alunosData, aprovadosData) {
   const selectedVest = nameVestInput.value
   switch(selectedVest) {
     case 'UEL':
-      const alunosAprovadosUEL = verificarUEL(alunosData, aprovadosData);
-      return alunosAprovadosUEL;
-  }
+      return verificarUEL(alunosData, aprovadosData);
+      break;
+      case 'UEM': 
+      return verificarUEM(alunosData, aprovadosData);
+      break;
+    }
 }
 
 
