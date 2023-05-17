@@ -155,7 +155,7 @@ function executar () {
          y += lineHeight;
       }
 
-      doc.save("Aprovados"+ " " + nameVestInput.value + " " + ".pdf")
+      doc.save("Aprovados"+ " " + nameVestInput.value + ".pdf")
       
     };
   };
