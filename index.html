@@ -1,68 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/greenTick.css">
-    <link rel="stylesheet" href="./css/helpButton.css">
-    <link rel="stylesheet" href="./css/shakebutton.css">
-    <link rel="stylesheet" href="./css/redTick.css">
-    <link rel="icon" href="./images/logoApVest.png" type="image/icon type">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/greenTick.css" />
+    <link rel="stylesheet" href="./css/helpButton.css" />
+    <link rel="stylesheet" href="./css/shakebutton.css" />
+    <link rel="stylesheet" href="./css/redTick.css" />
+    <link rel="icon" href="./images/logoApVest.png" type="image/icon type" />
     <title>ApVest</title>
-</head>
-<body>
+  </head>
+  <body>
     <img src="./images/exemploLogo.png" alt="Logo" class="logoUni" />
-    
-    <form>      
-        <div class="firstLine" style="display: flex; align-items: center;">
-            <img title="interrogacaoIcon" src="./images/interrogacaoIcon.png" class="intIcon" id="interrogacaoIcon"/>
-            <img src="./images/logoApVest.png" alt="Logo" class="logoApVest" />
+
+    <form>
+      <div class="firstLine" style="display: flex; align-items: center">
+        <img
+          title="interrogacaoIcon"
+          src="./images/interrogacaoIcon.png"
+          class="intIcon"
+          id="interrogacaoIcon"
+        />
+        <img src="./images/logoApVest.png" alt="Logo" class="logoApVest" />
+      </div>
+
+      <h1>Bem-vindo(a) ao ApVest!</h1>
+      <hr />
+
+      <div class="inputVest">
+        <h3 class="nomeVest">Nome da universidade:</h3>
+        <select class="select" id="nomeVest">
+          <option value="">Selecione</option>
+          <option>UEL</option>
+          <option>UEM</option>
+        </select>
+      </div>
+
+      <h3 class="lista-de-alunos">Lista de alunos:</h3>
+      <div class="input1">
+        <label for="lista-alunos" class="button">Escolher arquivo</label>
+        <div class="input1Tick">
+          <input id="lista-alunos" class="input" type="file" accept=".txt" />
+          <img
+            title="greenTick2"
+            src="./images/greenTick.png"
+            class="greenTickInput1"
+            id="greenTickInput1"
+          />
+          <img
+            title="redTick1"
+            src="./images/redTick.png"
+            class="redTickInput1"
+            id="redTickInput1"
+          />
         </div>
-        
-        <h1>Bem-vindo(a) ao ApVest!</h1>
-        <hr>
-        
-        <div class="inputVest">
-            <h3 class="nomeVest">Nome da universidade:</h3>
-            <select class="select" id="nomeVest">
-                <option value="">Selecione</option>
-                <option>UEL</option>
-                <option>UEM</option>
-            </select>
+      </div>
+
+      <h3>Lista de aprovados:</h3>
+      <div class="input2">
+        <label for="lista-aprovados" class="button">Escolher arquivo</label>
+        <div class="input2Tick">
+          <input id="lista-aprovados" class="input" type="file" accept=".txt" />
+          <img
+            title="redTick1"
+            src="./images/greenTick.png"
+            class="greenTickInput2"
+            id="greenTickInput2"
+          />
+          <img
+            title="redTick2"
+            src="./images/redTick.png"
+            class="redTickInput2"
+            id="redTickInput2"
+          />
         </div>
+      </div>
 
-        <h3 class="lista-de-alunos">Lista de alunos:</h3>
-        <div class="input1">
-            <label for="lista-alunos" class="button">Escolher arquivo</label>
-            <div class="input1Tick">
-              <input id="lista-alunos" class="input" type="file" accept=".txt">
-              <img title="greenTick2" src="./images/greenTick.png" class="greenTickInput1" id="greenTickInput1" />   
-              <img title="redTick1" src="./images/redTick.png" class="redTickInput1" id="redTickInput1" />   
-            </div>
-        </div>
+      <hr />
 
-        <h3>Lista de aprovados:</h3>
-        <div class="input2">
-            <label for="lista-aprovados" class="button">Escolher arquivo</label>
-            <div class="input2Tick">
-                <input id='lista-aprovados' class='input' type="file" accept=".txt">
-                <img title="redTick1" src="./images/greenTick.png" class="greenTickInput2" id="greenTickInput2" /> 
-                <img title="redTick2" src="./images/redTick.png" class="redTickInput2" id="redTickInput2" /> 
-            </div>
-        </div>  
+      <button type="button" id="input_client_button">Verificar</button>
+    </form>
 
-        <hr>
-
-        <button type="button" id="input_client_button">Verificar</button>
-        </form>
-        
-        <script src="./js/script.js" type="module"></script>
-        <script src="./js/displayName.js"></script>
-        <script src="./js/helpButton.js"></script>
-        <script src="./js/shakebutton.js"></script>
-        <script src="./js/universidades/scriptUEL.js" type="module"></script>
-    </body>
+    <script src="./js/script.js" type="module"></script>
+    <script src="./js/displayName.js"></script>
+    <script src="./js/helpButton.js"></script>
+    <script src="./js/shakebutton.js"></script>
+    <script src="./js/universidades/scriptUEL.js" type="module"></script>
+  </body>
 </html>
