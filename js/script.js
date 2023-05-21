@@ -205,6 +205,14 @@ function executar() {
           addPage(doc);
           y = topMargin;
         }
+        if(alunosAprovadosMask[i][0] === ' '){
+        doc.setFont("helvetica", "normal")
+        .setFontSize(15)
+        }
+        if (alunosAprovadosMask[i][0] !== ' ') {
+          doc.setFont("helvetica", "bold")
+          .setFontSize(16)
+        }
         doc.text(alunosAprovadosMask[i], 20, y);
         y += lineHeight;
       }
@@ -224,7 +232,8 @@ const client_button = document
     e.preventDefault();
     if (
       alunosFileInput.files.length != 0 &&
-      aprovadosFileInput.files.length != 0
+      aprovadosFileInput.files.length != 0 &&
+      nameVestInput.value != ''
     ) {
       executar();
     }

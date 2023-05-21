@@ -202,12 +202,7 @@ export function verificarUEM(alunosData, aprovadosData) {
     }
   });
 
-  console.table("alunosAprovados:" + " " + alunosAprovados);
-  console.table(
-    "alunosAprovadosComFormatacao:" + " " + alunosAprovadosComFormatacao
-  );
-  console.log(alunosSet);
-  console.log(cursosSemFormatacaoSet);
+  console.table(alunosAprovados);
 
   return alunosAprovadosComFormatacao;
 }
