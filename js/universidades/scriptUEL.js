@@ -4,23 +4,23 @@ export function verificarUEL (alunosData, aprovadosData) {
   const espacosRepetidos = /( )\1+/g;
   const caracteresEspeciais = /[-!@#$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g;
   
-  //regex para tirar os \r e outros problemas (como números ou espaços repetidos)
+
   const alunosSemFormatacao = alunosData
   .replace(/\r\n/g, '\n')  //substitui \r por \n (causa erros em algumas listas)
   .replace(/\r/g, '\n') //substitui \r por \n (causa erros em algumas listas)
-  .replace(numeros, "") // retira números
-  .replace(espacosRepetidos, ' ') // transforma os espaços repetidos em um só
-  .replace(caracteresEspeciais, '') // retira caracteres especiais
-  .split('\n'); // divide os nomes baseado em \n
+  .replace(numeros, "")
+  .replace(espacosRepetidos, ' ')
+  .replace(caracteresEspeciais, '')
+  .split('\n');
 
 
   const aprovadosSemFormatacao = aprovadosData
   .replace(/\r\n/g, '\n') //substitui \r por \n (causa erros em algumas listas)
   .replace(/\r/g, '\n') //substitui \r por \n (causa erros em algumas listas)
-  .replace(numeros, "") // retira números
-  .replace(espacosRepetidos, ' ') // transforma os espaços repetidos em um só
+  .replace(numeros, "")
+  .replace(espacosRepetidos, ' ')
   .replace(caracteresEspeciais, '') // retira caracteres especiais
-  .split('\n'); // divide os nomes baseado em \n
+  .split('\n');
 
   let alunos = [];
   let aprovados = [];
