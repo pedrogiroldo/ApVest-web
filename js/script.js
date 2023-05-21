@@ -201,22 +201,25 @@ function executar() {
       doc.setFontSize(18);
       let y = topMargin;
       for (let i = 0; i < alunosAprovadosMask.length; i++) {
-        if (y + lineHeight > pageHeight - bottomMargin) {
-          addPage(doc);
-          y = topMargin;
+        if (
+          alunosAprovadosMask[i + 1] &&
+          !(alunosAprovadosMask[i][0] !== " " &&
+            alunosAprovadosMask[i + 1][0] !== " ")
+        ) {
+          if (y + lineHeight > pageHeight - bottomMargin) {
+            addPage(doc);
+            y = topMargin;
+          }
+          if (alunosAprovadosMask[i][0] === " ") {
+            doc.setFont("helvetica", "normal").setFontSize(15);
+          }
+          if (alunosAprovadosMask[i][0] !== " ") {
+            doc.setFont("helvetica", "bold").setFontSize(16);
+          }
+          doc.text(alunosAprovadosMask[i], 20, y);
+          y += lineHeight;
         }
-        if(alunosAprovadosMask[i][0] === ' '){
-        doc.setFont("helvetica", "normal")
-        .setFontSize(15)
-        }
-        if (alunosAprovadosMask[i][0] !== ' ') {
-          doc.setFont("helvetica", "bold")
-          .setFontSize(16)
-        }
-        doc.text(alunosAprovadosMask[i], 20, y);
-        y += lineHeight;
       }
-
       doc.save("Aprovados" + " " + nameVestInput.value + ".pdf");
     };
   };
@@ -233,7 +236,7 @@ const client_button = document
     if (
       alunosFileInput.files.length != 0 &&
       aprovadosFileInput.files.length != 0 &&
-      nameVestInput.value != ''
+      nameVestInput.value != ""
     ) {
       executar();
     }
