@@ -1,6 +1,5 @@
 // A LISTA DA UEM É UM .TXT COM ANSI. COLOCAR NA DOCUMENTAÇÃO COMO CONVERTER PARA UTF-8 NA DOC
 
-
 export function verificarUEM(alunosData, aprovadosData) {
   /*
     =======
@@ -11,7 +10,7 @@ export function verificarUEM(alunosData, aprovadosData) {
   const espacosRepetidos = /( )\1+/g;
   const caracteresEspeciais = /[-!@#$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g;
   const acentos = /[\u0300-\u036f]/g;
-  
+
   const alunosSemFormatacao = alunosData
     .replace(/\r\n/g, "\n") //substitui \r por \n (causa erros em algumas listas)
     .replace(/\r/g, "\n") //substitui \r por \n (causa erros em algumas listas)
@@ -121,21 +120,22 @@ export function verificarUEM(alunosData, aprovadosData) {
     "Tecnologia em Alimentos (Noturno-Umuarama)",
     "Tecnologia em Construção Civil (Noturno-Umuarama)",
     "Tecnologia em Meio Ambiente (Noturno-Umuarama)",
-    "Zootecnia (Integral-Maringá)"
-]
+    "Zootecnia (Integral-Maringá)",
+  ];
 
-let cursosSemFormatacao = []
+  let cursosSemFormatacao = [];
 
-for (let i = 0; i < cursos.length; i++) {
-  cursosSemFormatacao.push(cursos[i]
-  .replace(numeros, "")
-  .replace(espacosRepetidos, " ")
-  .replace(caracteresEspeciais, "")
-  .normalize("NFD")
-  .replace(acentos, "")
-  .toUpperCase()
-  )
-}
+  for (let i = 0; i < cursos.length; i++) {
+    cursosSemFormatacao.push(
+      cursos[i]
+        .replace(numeros, "")
+        .replace(espacosRepetidos, " ")
+        .replace(caracteresEspeciais, "")
+        .normalize("NFD")
+        .replace(acentos, "")
+        .toUpperCase()
+    );
+  }
 
   let alunos = [];
   let aprovados = [];
@@ -162,36 +162,52 @@ for (let i = 0; i < cursos.length; i++) {
     }
   });
 
-{
-  let i = 0
-  while (i < alunos.length) {
-    alunosComCurso.push(alunos[i]);
-    i++;
-  };
-};
+  {
+    let i = 0;
+    while (i < alunos.length) {
+      alunosComCurso.push(alunos[i]);
+      i++;
+    }
+  }
 
-{
-  let i = 0
-  while (i < cursosSemFormatacao.length) {
-    alunosComCurso.push(cursosSemFormatacao[i]);
-    i++;
-  };
-};
+  {
+    let i = 0;
+    while (i < cursosSemFormatacao.length) {
+      alunosComCurso.push(cursosSemFormatacao[i]);
+      i++;
+    }
+  }
 
-  const alunosSet = new Set(alunosComCurso);
+  let alunosAprovados = [];
+  let alunosAprovadosComFormatacao = [];
+
+  const alunosSet = new Set(alunos);
+  const cursosSemFormatacaoSet = new Set(cursosSemFormatacao);
+  const alunosComCursoSet = new Set(alunosComCurso);
   const aprovadosSet = new Set(aprovados);
 
-  const alunosAprovados = [];
-
   aprovadosSet.forEach((aluno) => {
-    if (alunosSet.has(aluno)) {
+    if (alunosComCursoSet.has(aluno)) {
       alunosAprovados.push(aluno);
     }
   });
 
-  console.table('alunosAprovados:' + ' ' + alunosAprovados);
-  console.table('alunosSet:' + ' ' + alunos);
-  console.table('aprovadosSet:' + ' ' + aprovados);
-  console.table('cursosSemFormatacao:' + ' ' + cursosSemFormatacao);
-  return alunosAprovados;
+  const alunosAprovadosSet = new Set(alunosAprovados);
+
+  alunosAprovados.forEach((linha) => {
+    if (alunosSet.has(linha)) {
+      alunosAprovadosComFormatacao.push("       " + linha);
+    } else if (cursosSemFormatacaoSet.has(linha)) {
+      alunosAprovadosComFormatacao.push(linha);
+    }
+  });
+
+  console.table("alunosAprovados:" + " " + alunosAprovados);
+  console.table(
+    "alunosAprovadosComFormatacao:" + " " + alunosAprovadosComFormatacao
+  );
+  console.log(alunosSet);
+  console.log(cursosSemFormatacaoSet);
+
+  return alunosAprovadosComFormatacao;
 }
