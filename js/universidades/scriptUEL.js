@@ -1,36 +1,33 @@
-export function verificarUEL (alunosData, aprovadosData) {
+export function verificarUEL(alunosData, aprovadosData) {
   //regex de números
-  const numeros = /\d+/g
+  const numeros = /\d+/g;
   const espacosRepetidos = /( )\1+/g;
   const caracteresEspeciais = /[-!@#$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g;
-  
 
   const alunosSemFormatacao = alunosData
-  .replace(/\r\n/g, '\n')  //substitui \r por \n (causa erros em algumas listas)
-  .replace(/\r/g, '\n') //substitui \r por \n (causa erros em algumas listas)
-  .replace(numeros, "")
-  .replace(espacosRepetidos, ' ')
-  .replace(caracteresEspeciais, '')
-  .split('\n');
-
+    .replace(/\r\n/g, "\n") //substitui \r por \n (causa erros em algumas listas)
+    .replace(/\r/g, "\n") //substitui \r por \n (causa erros em algumas listas)
+    .replace(numeros, "")
+    .replace(espacosRepetidos, " ")
+    .replace(caracteresEspeciais, "")
+    .split("\n");
 
   const aprovadosSemFormatacao = aprovadosData
-  .replace(/\r\n/g, '\n') //substitui \r por \n (causa erros em algumas listas)
-  .replace(/\r/g, '\n') //substitui \r por \n (causa erros em algumas listas)
-  .replace(numeros, "")
-  .replace(espacosRepetidos, ' ')
-  .replace(caracteresEspeciais, '') // retira caracteres especiais
-  .split('\n');
+    .replace(/\r\n/g, "\n") //substitui \r por \n (causa erros em algumas listas)
+    .replace(/\r/g, "\n") //substitui \r por \n (causa erros em algumas listas)
+    .replace(numeros, "")
+    .replace(espacosRepetidos, " ")
+    .replace(caracteresEspeciais, "") // retira caracteres especiais
+    .split("\n");
 
   let alunos = [];
   let aprovados = [];
 
   // Remover acentos e colocar em maiúsculo com primeira letra de cada palavra em maiúsculo
   alunosSemFormatacao.forEach((aluno) => {
-
     aluno = aluno.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     aluno = aluno.toUpperCase();
-    aluno = aluno.replace(/(\b\w)/gi, function(m) {
+    aluno = aluno.replace(/(\b\w)/gi, function (m) {
       return m.toUpperCase();
     });
     alunos.push(aluno);

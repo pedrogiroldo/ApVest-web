@@ -1,70 +1,69 @@
-  .popup {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 700px;
-    height: 700px;
-    box-shadow: 0 0 10px rgba(12, 92, 12, 0.5);
-    border-color: #00913d;
-    position: absolute;
-    display: none;
-    z-index: 1;
-  }
+.popup {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 700px;
+  height: 700px;
+  box-shadow: 0 0 10px rgba(12, 92, 12, 0.5);
+  border-color: #00913d;
+  position: absolute;
+  display: none;
+  z-index: 1;
+}
 
-  /* .popup__content {
+/* .popup__content {
     margin-top: 20px;
     max-height: 80%;
     overflow-y: auto;
     max-width: 00px;
     } */
-  
-  .popup.show {
-    display: block;
-  }
-  
-  
-  .popup__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .popup__title {
-    font-size: 24px;
-    margin: 0;
-  }
-  
-  .popup__close {
-    background-color: transparent;
-    border: none;
-    color: #333;
-    cursor: pointer;
-    font-size: 40px;
-    font-weight: bold;
-  }
-  
-  .popup__button {
-    background-color: #00913d;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .popup__button:hover {
-    background-color: #00642a;
-    cursor: pointer;
-  }
 
-   /* .popup::before {
+.popup.show {
+  display: block;
+}
+
+.popup__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup__title {
+  font-size: 24px;
+  margin: 0;
+}
+
+.popup__close {
+  background-color: transparent;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.popup__button {
+  background-color: #00913d;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup__button:hover {
+  background-color: #00642a;
+  cursor: pointer;
+}
+
+/* .popup::before {
     content: "";
     position: fixed;
     top: 0;
