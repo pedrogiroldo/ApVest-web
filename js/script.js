@@ -37,6 +37,7 @@ FUNCOES
 
 // IMPORTAR FUNCOES UNIVERSIDADES
 import { verificarUEL } from "./universidades/scriptUEL.js";
+import { verificarUEM } from "./universidades/scriptUEM.js";
 
 //funções para conversão de valores
 function ptToPx(pt) {
@@ -96,7 +97,7 @@ function addLogo(doc, page) {
   } else {
     const addUniLogo = () => {
       doc.addImage(
-        logoUni,
+        "../images/exemploLogo.png",
         "PNG",
         A4_WIDTH_SIZE / 2 - uniW / 2,
         pxToPt(10),
@@ -109,7 +110,7 @@ function addLogo(doc, page) {
     };
     const addApVestLogo = () => {
       doc.addImage(
-        logoApVest,
+        "../images/logoApVest.png",
         "PNG",
         A4_WIDTH_SIZE - ApVestW / 2 - pxToPt(15),
         A4_HEIGHT_SIZE - ApVestH / 1.75,
@@ -134,8 +135,11 @@ function encontrarAlunosAprovados(alunosData, aprovadosData) {
   const selectedVest = nameVestInput.value;
   switch (selectedVest) {
     case "UEL":
-      const alunosAprovadosUEL = verificarUEL(alunosData, aprovadosData);
-      return alunosAprovadosUEL;
+      return verificarUEL(alunosData, aprovadosData);
+      break;
+    case "UEM":
+      return verificarUEM(alunosData, aprovadosData);
+      break;
   }
 }
 
@@ -197,14 +201,25 @@ function executar() {
       doc.setFontSize(18);
       let y = topMargin;
       for (let i = 0; i < alunosAprovadosMask.length; i++) {
-        if (y + lineHeight > pageHeight - bottomMargin) {
-          addPage(doc);
-          y = topMargin;
+        if (
+          alunosAprovadosMask[i + 1] &&
+          !(alunosAprovadosMask[i][0] !== " " &&
+            alunosAprovadosMask[i + 1][0] !== " ")
+        ) {
+          if (y + lineHeight > pageHeight - bottomMargin) {
+            addPage(doc);
+            y = topMargin;
+          }
+          if (alunosAprovadosMask[i][0] === " ") {
+            doc.setFont("helvetica", "normal").setFontSize(15);
+          }
+          if (alunosAprovadosMask[i][0] !== " ") {
+            doc.setFont("helvetica", "bold").setFontSize(16);
+          }
+          doc.text(alunosAprovadosMask[i], 20, y);
+          y += lineHeight;
         }
-        doc.text(alunosAprovadosMask[i], 20, y);
-        y += lineHeight;
       }
-
       doc.save("Aprovados" + " " + nameVestInput.value + ".pdf");
     };
   };
@@ -220,7 +235,8 @@ const client_button = document
     e.preventDefault();
     if (
       alunosFileInput.files.length != 0 &&
-      aprovadosFileInput.files.length != 0
+      aprovadosFileInput.files.length != 0 &&
+      nameVestInput.value != ""
     ) {
       executar();
     }
